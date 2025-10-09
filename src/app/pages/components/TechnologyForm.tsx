@@ -47,7 +47,7 @@ export default function TechnologyForm() {
                     setValue('description', data.description);
                     setValue('website', data.website || '');
                     setValue('category', data.category);
-                } catch (_error) {
+                } catch {
                     toast.error('No se pudo cargar la tecnología para editar.');
                     router.push('/');
                 }

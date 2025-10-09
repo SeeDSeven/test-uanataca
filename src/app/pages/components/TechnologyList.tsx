@@ -20,7 +20,7 @@ export default function ListadoPage() {
             if (!res.ok) throw new Error('Error al cargar las tecnologías');
             const data = await res.json();
             setTechnologies(data);
-        } catch (error) {
+        } catch {
             toast.error('No se pudieron cargar las tecnologías.');
         } finally {
             setLoading(false);

@@ -1,8 +1,9 @@
-// app/api/technologies/[id]/route.ts
+// src/app/api/technologies/[id]/route.ts
 import { technologyController } from "@/backend/controllers/technology.controller";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-interface RouteParams {
+// Definimos el tipo para el segundo argumento 'context' que nos da Next.js
+interface RouteContext {
   params: { id: string };
 }
 
@@ -14,32 +15,29 @@ const parseId = (id: string) => {
     return parsedId;
 }
 
-// Obtener una tecnología por ID
-export async function GET(req: NextRequest, { params }: RouteParams) {
+export async function GET(req: NextRequest, context: RouteContext) {
     try {
-        const id = parseId(params.id);
+        const id = parseId(context.params.id); 
         return technologyController.getById(id);
     } catch (error) {
-        return new Response(JSON.stringify({ message: (error as Error).message }), { status: 400 });
+        return NextResponse.json({ message: (error as Error).message }, { status: 400 });
     }
 }
 
-// Actualizar una tecnología por ID
-export async function PUT(req: NextRequest, { params }: RouteParams) {
+export async function PUT(req: NextRequest, context: RouteContext) {
     try {
-        const id = parseId(params.id);
+        const id = parseId(context.params.id); 
         return technologyController.update(req, id);
     } catch (error) {
-        return new Response(JSON.stringify({ message: (error as Error).message }), { status: 400 });
+        return NextResponse.json({ message: (error as Error).message }, { status: 400 });
     }
 }
 
-// Eliminar una tecnología por ID
-export async function DELETE(req: NextRequest, { params }: RouteParams) {
+export async function DELETE(req: NextRequest, context: RouteContext) {
     try {
-        const id = parseId(params.id);
+        const id = parseId(context.params.id); 
         return technologyController.delete(id);
     } catch (error) {
-        return new Response(JSON.stringify({ message: (error as Error).message }), { status: 400 });
+        return NextResponse.json({ message: (error as Error).message }, { status: 400 });
     }
 }
