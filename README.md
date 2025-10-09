@@ -39,8 +39,10 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local.
 ### Pasos de Instalación
 
 1. Clona el repositorio:
-   ```git clone https://github.com/SeeDSeven/test-uanataca.git
-   cd test-uanataca```
+   ```
+   git clone https://github.com/SeeDSeven/test-uanataca.git
+   cd test-uanataca
+   ```
 
 2. Instala las dependencias:
   `npm install`
