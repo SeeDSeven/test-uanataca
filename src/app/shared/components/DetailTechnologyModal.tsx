@@ -10,6 +10,13 @@ interface DetailModalProps {
 export default function DetailTechnologyModal({ technology, onClose }: DetailModalProps) {
   if (!technology) return null;
 
+  const formatDateTime = (dateString: string) => {
+    return new Date(dateString).toLocaleString('es-CO', {
+      dateStyle: 'long',
+      timeStyle: 'short',
+    });
+  };
+
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
@@ -36,6 +43,14 @@ export default function DetailTechnologyModal({ technology, onClose }: DetailMod
             >
               {technology.website || 'No disponible'}
             </a>
+          </div>
+          <div className="bg-gray-900 p-2 rounded">
+            <span className="font-semibold text-gray-400">Creado el: </span>
+            <span>{formatDateTime(technology.created_at)}</span>
+          </div>
+          <div className="bg-gray-900 p-2 rounded">
+            <span className="font-semibold text-gray-400">Actualizado el: </span>
+            <span>{formatDateTime(technology.updated_at)}</span>
           </div>
         </div>
         <button
