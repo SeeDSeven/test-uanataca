@@ -1,10 +1,11 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+
 datasource db {
   provider  = "postgresql"
-  url       = env("PRISMA_DATABASE_URL")
-  directUrl = env("POSTGRES_URL")
+  url       = env("PRISMA_DATABASE_URL") // <- La URL de Accelerate para la app
+  directUrl = env("POSTGRES_URL")      // <- La URL directa para las migraciones
 }
 
 generator client {
