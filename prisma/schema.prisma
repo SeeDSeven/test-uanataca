@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") 
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Definimos el enum para la categoría
+enum Category {
+  frontend
+  backend
+  devops
+  data
+  mobile
+  testing
+  other
+}
+
+// Definimos el modelo Technology
+model Technology {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String?
+  website     String?
+  category    Category
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  @@map("technologies") // Nombra la tabla en la base de datos como 'technologies'
+}
