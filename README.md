@@ -51,10 +51,10 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local.
 Crea un archivo .env en la raíz del proyecto y agrega las siguientres variables
 
 ```
-# URL de conexión directa para migraciones y seeding
+URL de conexión directa para migraciones y seeding
 POSTGRES_URL="postgres://..."
 
-# URL con pool de conexiones para la aplicación (usada por Prisma Accelerate)
+URL con pool de conexiones para la aplicación (usada por Prisma Accelerate)
 PRISMA_DATABASE_URL="prisma+postgres://..."
 ```
 
