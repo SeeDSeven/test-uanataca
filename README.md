@@ -45,7 +45,9 @@ Prerrequisitos
 
 
 * Configura las variables de entorno:
-Crea un archivo .env en la raíz del proyecto. Puedes copiar el contenido de .env.example (si lo creas) y llenarlo con tus propias credenciales.
+
+Crea un archivo .env en la raíz del proyecto.
+
 URL de conexión directa para migraciones y seeding
 POSTGRES_URL="postgres://..."
 
