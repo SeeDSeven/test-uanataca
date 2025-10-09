@@ -67,10 +67,13 @@ npm run db:seed
 ### Ejecutar la Aplicación
 
 * Modo Desarrollo:
+
 npm run dev
+
 La aplicación estará disponible en http://localhost:3000.
 
 * Build de Producción:
+
 npm run build
 npm run start
 
