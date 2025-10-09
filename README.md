@@ -46,10 +46,10 @@ Prerrequisitos
 
 * Configura las variables de entorno:
 Crea un archivo .env en la raíz del proyecto. Puedes copiar el contenido de .env.example (si lo creas) y llenarlo con tus propias credenciales.
-# URL de conexión directa para migraciones y seeding
+URL de conexión directa para migraciones y seeding
 POSTGRES_URL="postgres://..."
 
-# URL con pool de conexiones para la aplicación (usada por Prisma Accelerate)
+URL con pool de conexiones para la aplicación (usada por Prisma Accelerate)
 PRISMA_DATABASE_URL="prisma+postgres://..."
 
 
