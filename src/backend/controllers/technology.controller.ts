@@ -8,7 +8,7 @@ import { Prisma } from "@prisma/client";
 // Función para manejar errores de forma centralizada
 const handleError = (error: unknown) => {
   if (error instanceof ZodError) {
-    return NextResponse.json({ message: "Error de validación", errors: error.errors }, { status: 400 });
+    return NextResponse.json({ message: "Error de validación", errors: error.issues }, { status: 400 });
   }
   if (error instanceof Prisma.PrismaClientKnownRequestError) {
     // Error de restricción única (nombre ya existe)
