@@ -37,44 +37,48 @@ Prerrequisitos
 
 ### Pasos de Instalación
 
-* Clona el repositorio:
-* git clone https://github.com/SeeDSeven/test-uanataca.git
-* cd test-uanataca
-* Instala las dependencias:
-  npm install
+1. Clona el repositorio:
+   ```git clone https://github.com/SeeDSeven/test-uanataca.git
+   cd test-uanataca```
+
+2. Instala las dependencias:
+  `npm install`
 
 
-* Configura las variables de entorno:
+3. Configura las variables de entorno:
 
 Crea un archivo .env en la raíz del proyecto.
 
-URL de conexión directa para migraciones y seeding
+```URL de conexión directa para migraciones y seeding
 POSTGRES_URL="postgres://..."
 
 URL con pool de conexiones para la aplicación (usada por Prisma Accelerate)
-PRISMA_DATABASE_URL="prisma+postgres://..."
+PRISMA_DATABASE_URL="prisma+postgres://..."```
 
 
-* Aplica las migraciones a la base de datos:
+4. Aplica las migraciones a la base de datos:
 Este comando creará las tablas en tu base de datos según el esquema de Prisma.
-npx prisma migrate dev
+
+`npx prisma migrate dev`
 
 
-* (Opcional) Puebla la base de datos con datos de ejemplo:
-npm run db:seed
+5. (Opcional) Puebla la base de datos con datos de ejemplo:
+
+`npm run db:seed`
 
 
 ### Ejecutar la Aplicación
 
 * Modo Desarrollo:
 
-npm run dev
+`npm run dev`
 
 La aplicación estará disponible en http://localhost:3000.
 
 * Build de Producción:
 
-npm run build
-npm run start
+`npm run build`
+
+`npm run start`
 
 
