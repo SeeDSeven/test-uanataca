@@ -3,8 +3,8 @@
 
 datasource db {
   provider  = "postgresql"
-  url       = "${env("PRISMA_DATABASE_URL")}?pg-protocol=ipv4"
-  directUrl = "${env("POSTGRES_URL")}?pg-protocol=ipv4"
+  url       = env("PRISMA_DATABASE_URL")
+  directUrl = env("POSTGRES_URL")
 }
 
 generator client {
@@ -32,5 +32,5 @@ model Technology {
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
 
-  @@map("technologies") // Nombra la tabla en la base de datos como 'technologies'
+  @@map("technologies")
 }
