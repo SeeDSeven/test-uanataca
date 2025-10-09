@@ -29,7 +29,8 @@ https://test-uanataca.vercel.app/
 ## 🚀 Cómo Levantar el Proyecto en Local
 
 Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local.
-Prerrequisitos
+
+### Prerrequisitos
 
 * Node.js (v22)
 * npm (o yarn/pnpm)
@@ -47,13 +48,15 @@ Prerrequisitos
 
 3. Configura las variables de entorno:
 
-Crea un archivo .env en la raíz del proyecto.
+Crea un archivo .env en la raíz del proyecto y agrega las siguientres variables
 
-```URL de conexión directa para migraciones y seeding
+```
+# URL de conexión directa para migraciones y seeding
 POSTGRES_URL="postgres://..."
 
-URL con pool de conexiones para la aplicación (usada por Prisma Accelerate)
-PRISMA_DATABASE_URL="prisma+postgres://..."```
+# URL con pool de conexiones para la aplicación (usada por Prisma Accelerate)
+PRISMA_DATABASE_URL="prisma+postgres://..."
+```
 
 
 4. Aplica las migraciones a la base de datos:
