@@ -45,6 +45,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local.
    ```
 
 2. Instala las dependencias:
+
   `npm install`
 
 
